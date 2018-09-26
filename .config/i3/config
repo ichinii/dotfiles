@@ -1,0 +1,210 @@
+
+### Appearance
+#
+
+font pango:Droid Sans Mono 8
+
+set $yfocus #dddddd
+set $nfocus #222222
+#                         border  bg      text    indicat child_border
+client.focused            #000000 $yfocus #000000 #eeeeee $yfocus
+client.focused_inactive   #000000 $nfocus #eeeeee #000000 $nfocus
+client.unfocused          #000000 $nfocus #eeeeee #000000 $nfocus
+client.urgent             #000000 #000000 #eeeeee #000000 #ff0000
+
+# startup apps and window decs
+default_orientation horizontal
+workspace_layout default
+new_window pixel 2
+new_float normal
+
+### Variables
+#
+set $exec exec --no-startup-id
+set $exec_always exec_always --no-startup-id
+set $mod Mod4
+set $wmod Control
+set $alt Mod1
+set $left h
+set $down j
+set $up k
+set $right l
+set $term urxvt -pe selection-to-clipboard
+set $browser firefox
+set $files ranger
+set $files_visual nautilus
+set $menu dmenu_run
+set $monitor0 DVI-I-1
+set $monitor1 DVI-D-1
+
+### Key bindings
+#
+  # Applications
+  bindsym $mod+o $exec $browser
+  bindsym $mod+i $exec $term -e $files
+  bindsym $mod+u $exec $files_visual
+  bindsym $mod+Shift+Return $exec $term -e vim
+
+  # Pulse Audio controls
+  #bindsym XF86AudioRaiseVolume $exec gpactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% #increase sound volume
+  #bindsym XF86AudioLowerVolume $exec gpactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% #decrease sound volume
+  #bindsym XF86AudioMute $exec gpactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle # mute sound
+
+  # Sreen brightness controls
+  bindsym XF86MonBrightnessUp $exec light -A 8 # increase screen brightness
+  bindsym XF86MonBrightnessDown $exec light -U 8 # decrease screen brightness
+
+# general
+	bindsym $mod+Return $exec $term
+	bindsym $mod+shift+q kill
+	bindsym $mod+m $exec i3lock -t -i ~/.wallpaper/cat_mushroom.png
+	bindsym $mod+d $exec $menu
+	floating_modifier $mod
+	bindsym $mod+Shift+c restart
+	bindsym $mod+Shift+e exit
+	bindsym $mod+$left focus left
+	bindsym $mod+$down focus down
+	bindsym $mod+$up focus up
+	bindsym $mod+$right focus right
+	bindsym $mod+Left focus left
+	bindsym $mod+Down focus down
+	bindsym $mod+Up focus up
+	bindsym $mod+Right focus right
+	bindsym $mod+Shift+$left move left
+	bindsym $mod+Shift+$down move down
+	bindsym $mod+Shift+$up move up
+	bindsym $mod+Shift+$right move right
+	bindsym $mod+Shift+Left move left
+	bindsym $mod+Shift+Down move down
+	bindsym $mod+Shift+Up move up
+	bindsym $mod+Shift+Right move right
+
+workspace 1 output $monitor0
+workspace 2 output $monitor0
+workspace 3 output $monitor0
+workspace 4 output $monitor0
+workspace 5 output $monitor0
+workspace 6 output $monitor0
+workspace 7 output $monitor0
+workspace 8 output $monitor0
+workspace 9 output $monitor0
+workspace 10 output $monitor0
+
+workspace 1' output $monitor1
+workspace 2' output $monitor1
+workspace 3' output $monitor1
+workspace 4' output $monitor1
+workspace 5' output $monitor1
+workspace 6' output $monitor1
+workspace 7' output $monitor1
+workspace 8' output $monitor1
+workspace 9' output $monitor1
+workspace 10' output $monitor1
+
+# switch to workspace
+	bindsym $mod+1 workspace 1
+	bindsym $mod+2 workspace 2
+	bindsym $mod+3 workspace 3
+	bindsym $mod+4 workspace 4
+	bindsym $mod+5 workspace 5
+	bindsym $mod+6 workspace 6
+	bindsym $mod+7 workspace 7
+	bindsym $mod+8 workspace 8
+	bindsym $mod+9 workspace 9
+	bindsym $mod+0 workspace 10
+	bindsym $mod+Control+1 workspace 1'
+	bindsym $mod+Control+2 workspace 2'
+	bindsym $mod+Control+3 workspace 3'
+	bindsym $mod+Control+4 workspace 4'
+	bindsym $mod+Control+5 workspace 5'
+	bindsym $mod+Control+6 workspace 6'
+	bindsym $mod+Control+7 workspace 7'
+	bindsym $mod+Control+8 workspace 8'
+	bindsym $mod+Control+9 workspace 9'
+	bindsym $mod+Control+0 workspace 10'
+	bindsym $mod+Shift+1 move container to workspace 1
+	bindsym $mod+Shift+2 move container to workspace 2
+	bindsym $mod+Shift+3 move container to workspace 3
+	bindsym $mod+Shift+4 move container to workspace 4
+	bindsym $mod+Shift+5 move container to workspace 5
+	bindsym $mod+Shift+6 move container to workspace 6
+	bindsym $mod+Shift+7 move container to workspace 7
+	bindsym $mod+Shift+8 move container to workspace 8
+	bindsym $mod+Shift+9 move container to workspace 9
+	bindsym $mod+Shift+0 move container to workspace 10
+	bindsym $mod+Shift+Control+1 move container to workspace 1'
+	bindsym $mod+Shift+Control+2 move container to workspace 2'
+	bindsym $mod+Shift+Control+3 move container to workspace 3'
+	bindsym $mod+Shift+Control+4 move container to workspace 4'
+	bindsym $mod+Shift+Control+5 move container to workspace 5'
+	bindsym $mod+Shift+Control+6 move container to workspace 6'
+	bindsym $mod+Shift+Control+7 move container to workspace 7'
+	bindsym $mod+Shift+Control+8 move container to workspace 8'
+	bindsym $mod+Shift+Control+9 move container to workspace 9'
+	bindsym $mod+Shift+Control+0 move container to workspace 10'
+# Layout stuff:
+	bindsym $mod+b splith
+	bindsym $mod+v splitv
+
+	bindsym $mod+q layout default
+	bindsym $mod+w layout stacking
+	bindsym $mod+e layout tabbed
+
+	bindsym $mod+f fullscreen
+
+	bindsym $mod+Shift+space floating toggle
+
+	bindsym $mod+space focus mode_toggle
+
+	bindsym $mod+a focus parent
+
+mode "resize" {
+	bindsym $left resize shrink width 10 px or 10 ppt
+	bindsym $down resize grow height 10 px or 10 ppt
+	bindsym $up resize shrink height 10 px or 10 ppt
+	bindsym $right resize grow width 10 px or 10 ppt
+
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Status Bar:
+#
+bar {
+	status_command LC_ALL=C i3status
+	font pango:Droid Sans Mono 8
+    	position top
+    	colors {
+				background #000000
+				statusline $yfocus
+				# colorclass       border  background text
+				focused_workspace  $yfocus $yfocus    #000000
+				active_workspace   #000000 #eeeeee    #000000
+				inactive_workspace #000000 #000000    #eeeeee
+				urgent_workspace   #ff0000 #ff0000    #000000
+    	}
+}
+
+# Autostart
+#
+$exec pactl set-sink-mute 0 0 
+$exec pactl set-sink-volume 0 0%
+$exec pactl set-source-mute 0 0 
+$exec pactl set-source-volume 0 0%
+
+$exec urxvtd -q -f -o
+$exec iceoff
+#$exec compton
+$exec_always ~/.fehbg
+
+
+# Window Specific stuff
+#
+for_window [class="epc"] floating enable
+for_window [class="application"] floating enable

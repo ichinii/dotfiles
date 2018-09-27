@@ -49,9 +49,14 @@ set wrap
 "set showmatch
 set autoindent
 
-map <F2> :tabe 
-map <F3> :tabp<CR>
-map <F4> :tabn<CR>
+nmap <F2> :tabe 
+nmap <F3> :tabp<CR>
+nmap <F4> :tabn<CR>
+nmap <F5> :YcmDiags<CR>
+nmap <F6> :YcmCompleter FixIt<Cr>
+nmap <F8> :YcmCompleter GoTo<CR>
+nmap <F7> :YcmCompleter GetType<CR>
+nmap <C-J> :jumps<CR>
 
 set tabstop=2
 set softtabstop=2 noexpandtab

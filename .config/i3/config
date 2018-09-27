@@ -29,7 +29,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term urxvt -pe selection-to-clipboard
+set $term urxvtc -pe selection-to-clipboard
 set $browser firefox
 set $files ranger
 set $files_visual nautilus

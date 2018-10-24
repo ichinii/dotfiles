@@ -2,9 +2,9 @@
 ### Appearance
 #
 
-font pango:Droid Sans Mono 8
+font pango:Droid Sans Mono 10
 
-set $yfocus #dddddd
+set $yfocus #4286f4
 set $nfocus #222222
 #                         border  bg      text    indicat child_border
 client.focused            #000000 $yfocus #000000 #eeeeee $yfocus
@@ -34,8 +34,9 @@ set $browser firefox
 set $files ranger
 set $files_visual nautilus
 set $menu dmenu_run
-set $monitor0 DVI-I-1
-set $monitor1 DVI-D-1
+set $monitor0 eDP-1
+set $monitor1 HDMI-1
+set $monitor2 HDMI-2
 
 ### Key bindings
 #
@@ -46,9 +47,9 @@ set $monitor1 DVI-D-1
   bindsym $mod+Shift+Return $exec $term -e vim
 
   # Pulse Audio controls
-  #bindsym XF86AudioRaiseVolume $exec gpactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% #increase sound volume
-  #bindsym XF86AudioLowerVolume $exec gpactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% #decrease sound volume
-  #bindsym XF86AudioMute $exec gpactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle # mute sound
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% #increase sound volume
+  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% #decrease sound volume
+  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle # mute sound
 
   # Sreen brightness controls
   bindsym XF86MonBrightnessUp $exec light -A 8 # increase screen brightness
@@ -57,7 +58,7 @@ set $monitor1 DVI-D-1
 # general
 	bindsym $mod+Return $exec $term
 	bindsym $mod+shift+q kill
-	bindsym $mod+m $exec i3lock -t -i ~/.wallpaper/cat_mushroom.png
+	bindsym $mod+m $exec i3lock -t -i ~/.wallpaper/spider.jpg
 	bindsym $mod+p $exec scrot -u '%Y-%m-%d__%T__$wx$h.png' -e 'mv $f /home/sven/.screenshots'
 	bindsym $mod+d $exec $menu
 	floating_modifier $mod
@@ -179,7 +180,7 @@ bindsym $mod+r mode "resize"
 #
 bar {
 	status_command LC_ALL=C i3status
-	font pango:Droid Sans Mono 8
+	font pango:Droid Sans Mono 10
     	position top
     	colors {
 				background #000000
@@ -194,18 +195,18 @@ bar {
 
 # Autostart
 #
-$exec pactl set-sink-mute 0 0 
-$exec pactl set-sink-volume 0 0%
-$exec pactl set-source-mute 0 0 
-$exec pactl set-source-volume 0 0%
+#$exec --no-startup-id compton
+$exec --no-startup-id urxvtd -q -f -o
+$exec --no-startup-id nm-applet
+$exec_always --no-startup-id ~/.fehbg
 
-$exec urxvtd -q -f -o
-$exec iceoff
-#$exec compton
-$exec_always ~/.fehbg
+# mute sound
+$exec --no-startup-id pactl set-sink-mute 0 0 
+$exec --no-startup-id pactl set-sink-volume 0 0%
+$exec --no-startup-id pactl set-source-mute 0 1
+$exec --no-startup-id pactl set-source-volume 0 100%
+
 
 
 # Window Specific stuff
 #
-for_window [class="epc"] floating enable
-for_window [class="application"] floating enable

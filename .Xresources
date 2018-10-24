@@ -8,8 +8,8 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
 
-URxvt*foreground: #eeeeee
-URxvt*background: #000000
+URxvt*foreground: #e8e4de
+URxvt*background: #1e1a14
 !URxvt*geometry: 80x30
 URxvt*scrollBar: false
 

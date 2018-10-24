@@ -6,6 +6,7 @@ call vundle#begin()
 	Plugin 'vim-scripts/L9'
 	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'peterhoeg/vim-qml'
+  Plugin 'tikhomirov/vim-glsl'
 	Plugin 'rdnetto/YCM-Generator'
 	Plugin 'junegunn/fzf'
 	Plugin 'junegunn/fzf.vim'

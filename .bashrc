@@ -22,6 +22,7 @@ alias icestatus='icepath status'
 alias make='make -j16'
 alias try='. try'
 alias term="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
+alias ableton='wine "/home/ich/.wine/drive_c/ProgramData/Ableton/Live 10 Trial/Program/Ableton Live 10 Trial.exe"'
 
 export TERM='xterm-256color'
 export VISUAL='vim'

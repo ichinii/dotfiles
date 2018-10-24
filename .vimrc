@@ -27,7 +27,6 @@ let g:fzf_action = {
 
 " options
 syntax on
-tab all
 set encoding=UTF-8 fileencoding=UTF-8 termencoding=UTF-8
 set number relativenumber
 set hlsearch incsearch ignorecase smartcase
@@ -55,3 +54,4 @@ command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-compl
 
 "set exrc
 set secure
+tab all

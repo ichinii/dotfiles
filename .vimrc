@@ -1,77 +1,57 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'vim-scripts/L9'
+	Plugin 'Valloric/YouCompleteMe'
+	Plugin 'peterhoeg/vim-qml'
+	Plugin 'rdnetto/YCM-Generator'
+	Plugin 'junegunn/fzf'
+	Plugin 'junegunn/fzf.vim'
+call vundle#end()
+filetype plugin indent on
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-scripts/L9'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'peterhoeg/vim-qml'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'LucHermitte/lh-vim-lib'
-Plugin 'LucHermitte/local_vimrc'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
+" YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:max_diagnostics_to_display = 64
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:max_diagnostics_to_display = 1024
 
+" FZF
+let g:fzf_action = {
+	\ '': 'tab split',
+  \ 'ctrl-t': 'e',
+  \ 'ctrl-v': 'split',
+  \ 'ctrl-b': 'vsplit' }
+
+" options
 syntax on
-set encoding=UTF-8
-
-set number
-set relativenumber
-set hlsearch
+tab all
+set encoding=UTF-8 fileencoding=UTF-8 termencoding=UTF-8
+set number relativenumber
+set hlsearch incsearch ignorecase smartcase
+"set showmatch
 set wildmenu
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:$
-set linebreak
-set wrap
-"set showmatch
-set autoindent
+set wrap linebreak
+set colorcolumn=80
 
-nmap <F2> :tabe 
-nmap <F3> :tabp<CR>
-nmap <F4> :tabn<CR>
-nmap <F5> :YcmDiags<CR>
-nmap <F6> :YcmCompleter FixIt<Cr>
-nmap <F8> :YcmCompleter GoTo<CR>
-nmap <F7> :YcmCompleter GetType<CR>
-nmap <C-J> :jumps<CR>
+set                              tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab smarttab autoindent
+autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4   expandtab smarttab
+autocmd Filetype qml    setlocal tabstop=4 softtabstop=0 shiftwidth=4   expandtab smarttab
 
-set tabstop=2
-set softtabstop=2 noexpandtab
-set shiftwidth=2 nosmarttab
-autocmd Filetype python setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab nosmarttab
-autocmd Filetype qml setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-
-tab all
-
-let g:rg_command = '
-  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-  \ -g "!{.git,node_modules,vendor}/*" '
-
-command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+" mappings
+nnoremap <F2> :tabe 
+nnoremap <F3> :tabp<CR>
+nnoremap <F4> :tabn<CR>
+nnoremap <F5> :YcmDiags<CR>
+nnoremap <F6> :YcmCompleter FixIt<Cr>
+nnoremap <F7> :YcmCompleter GetType<CR>
+nnoremap <F8> :YcmCompleter GoTo<CR>
+nnoremap <C-J> :jumps<CR>
+nnoremap f :FZF<CR>
+command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --system-libclang
 
 "set exrc
 set secure

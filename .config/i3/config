@@ -58,6 +58,7 @@ set $monitor1 DVI-D-1
 	bindsym $mod+Return $exec $term
 	bindsym $mod+shift+q kill
 	bindsym $mod+m $exec i3lock -t -i ~/.wallpaper/cat_mushroom.png
+	bindsym $mod+p $exec scrot -u '%Y-%m-%d__%T__$wx$h.png' -e 'mv $f /home/sven/.screenshots'
 	bindsym $mod+d $exec $menu
 	floating_modifier $mod
 	bindsym $mod+Shift+c restart

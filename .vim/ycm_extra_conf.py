@@ -38,7 +38,7 @@ import ycm_core
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
 '-Wall',
-#'-Wextra',
+'-Wextra',
 #'-Werror',
 '-Wno-long-long',
 '-Wno-variadic-macros',
@@ -52,21 +52,10 @@ flags = [
 # compiled as C headers. You don't want that so ALWAYS specify the '-x' flag.
 # For a C project, you would set this to 'c' instead of 'c++'.
 '-x', 'c++',
-
-'-isystem', '../BoostParts',
 '-isystem', get_python_inc(),
-#'-isystem', '../llvm/include',
-#'-isystem', '../llvm/tools/clang/include',
-#'-isystem', './tests/gmock/gtest',
-#'-isystem', './tests/gmock/gtest/include',
-#'-isystem', './tests/gmock',
-#'-isystem', './tests/gmock/include',
-#'-isystem', './benchmarks/benchmark/include',
-#'-I', './ClangCompleter',
 '-I', '/usr/include',
-
-'-I', '.',
 '-I', 'src',
+'-I', '.',
 ]
 
 # Include installed c++ version

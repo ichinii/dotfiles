@@ -18,7 +18,7 @@ alias iceoff='source icepath off'
 alias icetoggle='source icepath toggle'
 alias icestatus='icepath status'
 alias make='make -j16'
-alias try='. try 1> /dev/null'
+alias try='. try'
 alias term="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
 
 export TERM='xterm-256color'

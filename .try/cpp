@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp -R "$1"/cpp_src/* "$2"
+vim +8 main.cpp

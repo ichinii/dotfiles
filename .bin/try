@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	>&2 echo "error: expected 1 argument. got $#"
+else
+	TEMPLATES="$HOME/.try"
+	SCRIPT="$TEMPLATES/$1"
+	if [ ! -f "$SCRIPT" ]; then
+		>&2 echo "error: couldn't find template script '$SCRIPT'"
+	else
+		DIR=$(mktemp -d)
+		cd "$DIR"
+
+		# call script
+		. $SCRIPT "$TEMPLATES" "$DIR"
+	fi
+fi

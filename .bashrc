@@ -41,6 +41,12 @@ fi
 
 LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
+# FZF
 export FZF_DEFAULT_OPTS='-m'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# use
+export USE_CONFIG_FILE=$HOME/.use/config.json
+export USE_TARGETS_FOLDER=$HOME/.use
+export USE_EDITOR=vim

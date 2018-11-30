@@ -62,7 +62,7 @@ set wrap linebreak
 set colorcolumn=80
 hi Search ctermbg=darkblue ctermfg=lightblue
 
-set                              tabstop=2 softtabstop=2 shiftwidth=2   expandtab   smarttab autoindent
+set                              tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab   smarttab autoindent
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4   expandtab   smarttab
 autocmd Filetype qml    setlocal tabstop=4 softtabstop=0 shiftwidth=4   expandtab   smarttab
 

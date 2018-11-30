@@ -200,17 +200,26 @@ bar {
 
 # Autostart
 #
-$exec pactl set-sink-mute 0 0 
-$exec pactl set-sink-volume 0 0%
-$exec pactl set-source-mute 0 0 
-$exec pactl set-source-volume 0 0%
-
+$exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo 0
+$exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 50%
+$exec pactl set-source-mute alsa_input.pci-0000_00_1f.3.analog-stereo 0
+$exec pactl set-source-volume alsa_input.pci-0000_00_1f.3.analog-stereo 50%
+$exec pactl set-source-mute alsa_output.pci-0000_00_1f.3.analog-stereo.monitor 1
+$exec pactl set-source-volume alsa_output.pci-0000_00_1f.3.analog-stereo.monitor 50%
 $exec urxvtd -q -f -o
 $exec compton --no-fading-openclose --active-opacity=1.0 --inactive-opacity=0.65 --no-dnd-shadow --shadow-ignore-shaped --vsync opengl --backend glx
 $exec_always ~/.fehbg
 
 
+
 # Window Specific stuff
 #
+for_window [class="kruler"] floating enable
+for_window [class="Gitk"] floating enable
 for_window [class="epc"] floating enable
 for_window [class="application"] floating enable
+for_window [class="Demo"] floating enable
+for_window [class="ComponentGallery"] floating enable
+for_window [class="Empty"] floating enable
+for_window [class="ViewModelsTest"] floating enable
+for_window [class="automacs-ui"] floating enable

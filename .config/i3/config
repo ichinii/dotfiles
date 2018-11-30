@@ -4,18 +4,24 @@
 
 font pango:Droid Sans Mono 8
 
-set $yfocus #dddddd
-set $nfocus #222222
+set $color_bg #302c27
+set $color_fg #eeeeee
+
 #                         border  bg      text    indicat child_border
-client.focused            #000000 $yfocus #000000 #eeeeee $yfocus
-client.focused_inactive   #000000 $nfocus #eeeeee #000000 $nfocus
-client.unfocused          #000000 $nfocus #eeeeee #000000 $nfocus
+client.focused            #000000 #000000 #000000 #eeeeee $color_bg
+client.focused_inactive   #000000 #000000 #eeeeee #000000 $color_bg
+client.unfocused          #000000 #000000 #eeeeee #000000 $color_bg
 client.urgent             #000000 #000000 #eeeeee #000000 #ff0000
+#                         border  bg      text    indicat child_border
+#client.focused            #000000 $color_bg #000000 #eeeeee $color_bg
+#client.focused_inactive   #000000 $color_bg #eeeeee #000000 $color_bg
+#client.unfocused          #000000 $color_bg #eeeeee #000000 $color_bg
+#client.urgent             #000000 #000000 #eeeeee #000000 #ff0000
 
 # startup apps and window decs
 default_orientation horizontal
 workspace_layout default
-new_window pixel 2
+new_window pixel 4
 new_float normal
 
 ### Variables
@@ -182,13 +188,13 @@ bar {
 	font pango:Droid Sans Mono 8
     	position top
     	colors {
-				background #000000
-				statusline $yfocus
-				# colorclass       border  background text
-				focused_workspace  $yfocus $yfocus    #000000
-				active_workspace   #000000 #eeeeee    #000000
-				inactive_workspace #000000 #000000    #eeeeee
-				urgent_workspace   #ff0000 #ff0000    #000000
+				background $color_bg
+				statusline $color_fg
+				# colorclass       border    background text
+				focused_workspace  $color_fg $color_fg  $color_bg
+				active_workspace   $color_bg $color_bg  $color_fg
+				inactive_workspace $color_bg $color_bg  $color_fg
+				urgent_workspace   #ff0000   #ff0000    #000000
     	}
 }
 
@@ -200,8 +206,7 @@ $exec pactl set-source-mute 0 0
 $exec pactl set-source-volume 0 0%
 
 $exec urxvtd -q -f -o
-$exec iceoff
-#$exec compton
+$exec compton --no-fading-openclose --active-opacity=1.0 --inactive-opacity=0.65 --no-dnd-shadow --shadow-ignore-shaped --vsync opengl --backend glx
 $exec_always ~/.fehbg
 
 

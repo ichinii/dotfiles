@@ -7,7 +7,7 @@
 
 PS1='[\u@\h \W]\$ '
 
-alias f='vimf'
+alias f='fzf'
 alias v='vim'
 alias vi='vim'
 alias ls='ls --color=auto'
@@ -23,6 +23,8 @@ alias make='make -j16'
 alias try='. try'
 alias term="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
 alias linphone="/opt/linphone-desktop/bin/linphone"
+alias fadd='git add $(fzf)'
+alias fcheckout='git checkout -- $(fzf)'
 
 export TERM='xterm-256color'
 export VISUAL='vim'

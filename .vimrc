@@ -14,6 +14,7 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'
   Plugin 'tomtom/tcomment_vim'
   Plugin 'easymotion/vim-easymotion'
+  Plugin 'calviken/vim-gdscript3'
 call vundle#end()
 filetype plugin indent on
 

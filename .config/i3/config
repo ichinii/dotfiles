@@ -210,3 +210,4 @@ $exec --no-startup-id pactl set-source-volume 0 100%
 
 # Window Specific stuff
 #
+for_window [class="opengl_training"] floating enable

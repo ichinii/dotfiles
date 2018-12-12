@@ -40,8 +40,6 @@ set $browser firefox
 set $files ranger
 set $files_visual nautilus
 set $menu dmenu_run
-set $monitor0 DVI-I-1
-set $monitor1 DVI-D-1
 
 ### Key bindings
 #
@@ -52,9 +50,9 @@ set $monitor1 DVI-D-1
   bindsym $mod+Shift+Return $exec $term -e vim
 
   # Pulse Audio controls
-  #bindsym XF86AudioRaiseVolume $exec gpactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% #increase sound volume
-  #bindsym XF86AudioLowerVolume $exec gpactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% #decrease sound volume
-  #bindsym XF86AudioMute $exec gpactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle # mute sound
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% # increase sound volume
+  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% # decrease sound volume
+  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle # mute sound
 
   # Sreen brightness controls
   bindsym XF86MonBrightnessUp $exec light -A 8 # increase screen brightness
@@ -85,28 +83,6 @@ set $monitor1 DVI-D-1
 	bindsym $mod+Shift+Down move down
 	bindsym $mod+Shift+Up move up
 	bindsym $mod+Shift+Right move right
-
-workspace 1 output $monitor0
-workspace 2 output $monitor0
-workspace 3 output $monitor0
-workspace 4 output $monitor0
-workspace 5 output $monitor0
-workspace 6 output $monitor0
-workspace 7 output $monitor0
-workspace 8 output $monitor0
-workspace 9 output $monitor0
-workspace 10 output $monitor0
-
-workspace 1' output $monitor1
-workspace 2' output $monitor1
-workspace 3' output $monitor1
-workspace 4' output $monitor1
-workspace 5' output $monitor1
-workspace 6' output $monitor1
-workspace 7' output $monitor1
-workspace 8' output $monitor1
-workspace 9' output $monitor1
-workspace 10' output $monitor1
 
 # switch to workspace
 	bindsym $mod+1 workspace 1

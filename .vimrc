@@ -84,7 +84,7 @@ function! SetIndentStyle()
   if spaces > tabs
     set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
   else
-    set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+    set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
   endif
 endfunction
 

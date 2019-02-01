@@ -12,6 +12,7 @@ URxvt*foreground: #eeeeee
 URxvt*background: #000000
 !URxvt*geometry: 80x30
 URxvt*scrollBar: false
+URxvt*vbell: true
 
 !-- Xft settings -- !
 Xft.dpi:        96

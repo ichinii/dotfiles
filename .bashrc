@@ -20,7 +20,7 @@ alias fzf='fzf -m'
 alias fcd='FZF=$(fzf +m) && cd $(realpath --no-symlinks "$FZF" | xargs dirname)'
 alias fadd='FZF=$(fzf -m) && [ -n "$FZF" ] && xargs git add $FZF'
 alias cal='cal -m'
-alias make='make -j4'
+alias make='make -j $(nproc)'
 alias try='. try'
 alias term="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
 alias linphone="/opt/linphone-desktop/bin/linphone"

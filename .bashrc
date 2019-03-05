@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '
+LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 set bell-style none
 
@@ -22,7 +23,7 @@ alias fadd='FZF=$(fzf -m) && [ -n "$FZF" ] && xargs git add "$FZF"'
 alias cal='cal -m'
 alias make='make -j $(nproc)'
 cmake() { /bin/cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=true $@ && cp compile_commands.json "$(cmake_source_dir)"; }
-alias try='. try'
+alias try='source try'
 alias term="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
 alias linphone="/opt/linphone-desktop/bin/linphone"
 alias scrot='scrot '"'"'%Y-%m-%d__%T__$wx$h.png'"'"' -e '"'"'mv $f '"$HOME"'/.screenshots'"'"
@@ -34,9 +35,6 @@ alias icestatus='icepath status'
 export TERM='xterm-256color'
 export VISUAL='vim'
 export EDITOR='vi'
-
-#export WORKON_HOME=~/.virtualenvs
-#source /usr/bin/virtualenvwrapper.sh
 
 if [ -d "/usr/lib/icecream/bin" ]; then
 	export PATH=$PATH:/usr/lib/icecream/bin
@@ -50,8 +48,6 @@ if [ -d "$HOME/.lib" ]; then
 	export LD_LIBRARY_PATH=$HOME/.lib:$LD_LIBRARY_PATH
 fi
 
-LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
-
 # FZF
 #export FZF_DEFAULT_OPTS='-m'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
@@ -62,5 +58,7 @@ export USE_CONFIG_FILE=$HOME/.use/config.json
 export USE_TARGETS_FOLDER=$HOME/.use
 export USE_EDITOR=vim
 
-# automacs-ui
-export AUTOMACS_MOUSE=1
+# local extra conf
+if [ -f "$HOME/.bashrc_local" ]; then
+	source "$HOME/.bashrc_local"
+fi

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+HOME_DIR=$(grep -e "CMAKE_HOME_DIRECTORY" CMakeCache.txt)
+if [ -n "$HOME_DIR" ]; then
+	echo "$HOME_DIR" | sed -e "s/.*=//"
+else
+	echo "."
+fi

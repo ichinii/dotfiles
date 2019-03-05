@@ -13,7 +13,8 @@ files = [
     '.vim/ycm_extra_conf.py',
     '.try/cpp',
     '.try/cpp_src',
-    '.bin/try'
+    '.bin/try',
+    '.bin/cmake_source_dir'
 ]
 
 dry = False

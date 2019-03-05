@@ -15,6 +15,7 @@ files = [
     '.try/cpp_src',
     '.bin/try',
     '.bin/brightness'
+    '.bin/cmake_source_dir'
 ]
 
 dry = False

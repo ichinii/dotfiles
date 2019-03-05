@@ -76,18 +76,21 @@ nnoremap f :FZF<CR>
 " tabs or spaces
 set                              tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab smarttab autoindent
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4   expandtab
-autocmd Filetype qml    setlocal tabstop=4 softtabstop=0 shiftwidth=4   expandtab
 function! SetIndentStyle()
   let tabs = len(filter(getline('1', '$'), 'v:val =~ "^\t"'))
   let spaces = len(filter(getline('1', '$'), 'v:val =~ "^ "'))
   if spaces > tabs
-    set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+		if len(filter(getline('1', '$'), 'v:val =~ "^  [^ ]"')) > 0 " 2 spaces
+			set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+		else                                                        " 4 spaces
+			set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+		endif
   else
-    set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+    set tabstop=2 softtabstop=2 shiftwidth=2
   endif
 endfunction
 
-autocmd FileType c,cpp call SetIndentStyle()
+autocmd FileType c,cpp,qml call SetIndentStyle()
 
 "set exrc
 set secure

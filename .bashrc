@@ -8,6 +8,8 @@
 PS1='[\u@\h \W]\$ '
 
 alias f='fzf'
+alias ff='export F=$(fzf)'
+alias ef='echo "$F"'
 alias v='vim'
 alias vi='vim'
 alias ls='ls --color=auto'

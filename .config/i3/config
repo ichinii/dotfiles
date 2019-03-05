@@ -39,7 +39,7 @@ set $term urxvtc -pe selection-to-clipboard
 set $browser firefox
 set $files ranger
 set $files_visual nautilus
-set $menu dmenu_run
+set $menu PATH="$HOME/.bin:$PATH" dmenu_run
 set $monitor0 DVI-I-1
 set $monitor1 DVI-D-1
 

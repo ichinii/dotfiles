@@ -61,6 +61,7 @@ set colorcolumn=80
 hi Search ctermbg=darkblue ctermfg=lightblue
 hi ColorColumn ctermbg=darkblue
 set noerrorbells
+set visualbell
 
 " mappings
 nnoremap <F2> :tabe 

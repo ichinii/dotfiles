@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '
+LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 alias f='fzf'
 alias ff='export F=$(fzf)'
@@ -16,6 +17,7 @@ alias ls='ls --color=auto'
 alias la='ls --color=auto -alh'
 alias grep='grep --color --line-number'
 alias cal='cal -m'
+alias make='make -j $(nproc)'
 alias scrot='scrot '"'"'%Y-%m-%d__%T__$wx$h.png'"'"' -e '"'"'mv $f '"$HOME"'/.screenshots'"'"
 alias iceon='source icepath on'
 alias iceoff='source icepath off'
@@ -32,9 +34,6 @@ export TERM='xterm-256color'
 export VISUAL='vim'
 export EDITOR='vi'
 
-#export WORKON_HOME=~/.virtualenvs
-#source /usr/bin/virtualenvwrapper.sh
-
 if [ -d "/usr/lib/icecream/bin" ]; then
 	export PATH=$PATH:/usr/lib/icecream/bin
 fi
@@ -43,7 +42,9 @@ if [ -d "$HOME/.bin" ]; then
 	export PATH=$HOME/.bin:$PATH
 fi
 
-LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+if [ -d "$HOME/.lib" ]; then
+	export LD_LIBRARY_PATH=$HOME/.lib:$LD_LIBRARY_PATH
+fi
 
 # FZF
 export FZF_DEFAULT_OPTS='-m'
@@ -54,3 +55,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export USE_CONFIG_FILE=$HOME/.use/config.json
 export USE_TARGETS_FOLDER=$HOME/.use
 export USE_EDITOR=vim
+
+# local extra conf
+if [ -f "$HOME/.bashrc_local" ]; then
+	source "$HOME/.bashrc_local"
+fi

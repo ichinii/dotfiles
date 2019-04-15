@@ -1,0 +1,37 @@
+#!/usr/bin/python
+
+import math
+import sys
+import subprocess
+
+def print_help():
+    print("-- usage --")
+    print("brightness increase")
+    print("brightness decrease")
+
+def clamp_light(value):
+    return min(100, max(0.4, value))
+
+def set_light(value):
+    value = clamp_light(value)
+    subprocess.call(["light", "-S", str(value)])
+
+if len(sys.argv) != 2:
+    print_help()
+    print("error: you must provide exactly 1 argument", file=sys.stderr)
+    exit(1)
+
+linear_factor = 1.5
+quadratic_factor = 0.05
+light = float(subprocess.check_output("light"))
+light = clamp_light(light)
+arg = sys.argv[1]
+
+if arg == "increase":
+    set_light(light * linear_factor + light * light * quadratic_factor)
+elif arg == "decrease":
+    set_light(light / linear_factor + math.sqrt(light) * quadratic_factor)
+else:
+    print_help()
+    print("error: unknown argument")
+    exit(1)

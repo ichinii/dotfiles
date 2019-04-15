@@ -54,7 +54,7 @@ map <Leader> <Plug>(easymotion-prefix)
 syntax on
 set encoding=UTF-8 fileencoding=UTF-8 termencoding=UTF-8
 set number relativenumber
-set hlsearch incsearch smartcase
+set hlsearch incsearch ignorecase
 "set showmatch
 set wildmenu
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:$

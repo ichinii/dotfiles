@@ -12,6 +12,7 @@ alias v='vim'
 alias vi='vim'
 alias ls='ls --color=auto'
 alias la='ls --color=auto -alh'
+alias t="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
 alias grep='grep --color --line-number'
 alias cal='cal -m'
 alias scrot='scrot '"'"'%Y-%m-%d__%T__$wx$h.png'"'"' -e '"'"'mv $f '"$HOME"'/.screenshots'"'"
@@ -19,9 +20,8 @@ alias iceon='source icepath on'
 alias iceoff='source icepath off'
 alias icetoggle='source icepath toggle'
 alias icestatus='icepath status'
-alias make='make -j16'
+alias make='make -j $(nproc)'
 alias try='. try'
-alias term="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
 alias ableton='wine "/home/ich/.wine/drive_c/ProgramData/Ableton/Live 10 Trial/Program/Ableton Live 10 Trial.exe"'
 
 export TERM='xterm-256color'

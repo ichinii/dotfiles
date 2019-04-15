@@ -54,6 +54,7 @@ flags = [
 '-x', 'c++',
 '-isystem', get_python_inc(),
 '-I', '/usr/include',
+'-I', '/usr/include/freetype2',
 '-I', 'src',
 '-I', '.',
 ]

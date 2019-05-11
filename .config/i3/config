@@ -35,7 +35,7 @@ set $files ranger
 set $files_visual nautilus
 set $menu dmenu_run
 set $monitor0 eDP-1
-set $monitor1 HDMI-1
+set $monitor1 DP-1
 set $monitor2 HDMI-2
 
 ### Key bindings

@@ -62,7 +62,7 @@ set $menu dmenu_run
 	bindsym $mod+Return $exec $term
 	bindsym $mod+shift+q kill
 	bindsym $mod+m $exec i3lock -t -i ~/media/wallpaper/faule_echse.png
-	bindsym $mod+p $exec scrot -u '%Y-%m-%d__%T__$wx$h.png' -e 'mv $f /home/ich/media/screenshots'
+	bindsym $mod+p $exec scrot -u '%Y-%m-%d_%H-%M-%S_$wx$h.png' -e 'mv $f /home/ich/media/screenshots'
 	bindsym $mod+d $exec $menu
 	floating_modifier $mod
 	bindsym $mod+Shift+c restart

@@ -53,6 +53,7 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " options
 syntax on
+set background=dark
 set encoding=UTF-8 fileencoding=UTF-8 termencoding=UTF-8
 set number relativenumber
 set hlsearch incsearch ignorecase

@@ -211,12 +211,7 @@ $exec --no-startup-id speed 2.5
 
 # Window Specific stuff
 #
-for_window [class="kruler"] floating enable
 for_window [class="Gitk"] floating enable
-for_window [class="epc"] floating enable
-for_window [class="application"] floating enable
-for_window [class="Demo"] floating enable
-for_window [class="ComponentGallery"] floating enable
-for_window [class="Empty"] floating enable
-for_window [class="ViewModelsTest"] floating enable
-for_window [class="automacs-ui"] floating enable
+for_window [class="opengl_training"] floating enable
+for_window [class="oscilloscope"] floating enable
+for_window [class="bee"] floating enable

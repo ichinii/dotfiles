@@ -2,26 +2,20 @@
 ### Appearance
 #
 
-font pango:Droid Sans Mono 8
+font pango:Droid Sans Mono 10
 
-set $color_bg #302c27
-set $color_fg #eeeeee
-
+set $yfocus #4286f4
+set $nfocus #222222
 #                         border  bg      text    indicat child_border
-client.focused            #000000 #000000 #000000 #eeeeee $color_bg
-client.focused_inactive   #000000 #000000 #eeeeee #000000 $color_bg
-client.unfocused          #000000 #000000 #eeeeee #000000 $color_bg
+client.focused            #000000 $yfocus #000000 #eeeeee $yfocus
+client.focused_inactive   #000000 $nfocus #eeeeee #000000 $nfocus
+client.unfocused          #000000 $nfocus #eeeeee #000000 $nfocus
 client.urgent             #000000 #000000 #eeeeee #000000 #ff0000
-#                         border  bg      text    indicat child_border
-#client.focused            #000000 $color_bg #000000 #eeeeee $color_bg
-#client.focused_inactive   #000000 $color_bg #eeeeee #000000 $color_bg
-#client.unfocused          #000000 $color_bg #eeeeee #000000 $color_bg
-#client.urgent             #000000 #000000 #eeeeee #000000 #ff0000
 
 # startup apps and window decs
 default_orientation horizontal
 workspace_layout default
-new_window pixel 4
+new_window pixel 2
 new_float normal
 
 ### Variables
@@ -40,6 +34,9 @@ set $browser firefox
 set $files ranger
 set $files_visual nautilus
 set $menu dmenu_run
+set $monitor0 eDP-1
+set $monitor1 DP-1
+set $monitor2 HDMI-2
 
 ### Key bindings
 #
@@ -50,9 +47,9 @@ set $menu dmenu_run
   bindsym $mod+Shift+Return $exec $term -e vim
 
   # Pulse Audio controls
-  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5% # increase sound volume
-  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5% # decrease sound volume
-  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle # mute sound
+  bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5%; pactl set-sink-volume 1 +5%; pactl set-sink-volume 2 +5%"
+  bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5%; pactl set-sink-volume 1 -5%; pactl set-sink-volume 2 -5%"
+  bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle; pactl set-sink-mute 1 toggle; pactl set-sink-mute 2 toggle"
 
   # Sreen brightness controls
   bindsym XF86MonBrightnessUp $exec brightness increase # increase screen brightness
@@ -62,7 +59,7 @@ set $menu dmenu_run
 	bindsym $mod+Return $exec $term
 	bindsym $mod+shift+q kill
 	bindsym $mod+m $exec i3lock -t -i ~/media/wallpaper/faule_echse.png
-	bindsym $mod+p $exec scrot -u '%Y-%m-%d_%H-%M-%S_$wx$h.png' -e 'mv $f /home/ich/media/screenshots'
+	bindsym $mod+p $exec scrot -u '%Y-%m-%d__%T__$wx$h.png' -e 'mv $f /home/sven/.screenshots'
 	bindsym $mod+d $exec $menu
 	floating_modifier $mod
 	bindsym $mod+Shift+c restart
@@ -83,6 +80,28 @@ set $menu dmenu_run
 	bindsym $mod+Shift+Down move down
 	bindsym $mod+Shift+Up move up
 	bindsym $mod+Shift+Right move right
+
+workspace 1 output $monitor0
+workspace 2 output $monitor0
+workspace 3 output $monitor0
+workspace 4 output $monitor0
+workspace 5 output $monitor0
+workspace 6 output $monitor0
+workspace 7 output $monitor0
+workspace 8 output $monitor0
+workspace 9 output $monitor0
+workspace 10 output $monitor0
+
+workspace 1' output $monitor1
+workspace 2' output $monitor1
+workspace 3' output $monitor1
+workspace 4' output $monitor1
+workspace 5' output $monitor1
+workspace 6' output $monitor1
+workspace 7' output $monitor1
+workspace 8' output $monitor1
+workspace 9' output $monitor1
+workspace 10' output $monitor1
 
 # switch to workspace
 	bindsym $mod+1 workspace 1
@@ -142,15 +161,15 @@ set $menu dmenu_run
 	bindsym $mod+a focus parent
 
 mode "resize" {
-	bindsym $left resize shrink width 100 px or 5 ppt
-	bindsym $down resize grow height 100 px or 5 ppt
-	bindsym $up resize shrink height 100 px or 5 ppt
-	bindsym $right resize grow width 100 px or 5 ppt
+	bindsym $left resize shrink width 10 px or 10 ppt
+	bindsym $down resize grow height 10 px or 10 ppt
+	bindsym $up resize shrink height 10 px or 10 ppt
+	bindsym $right resize grow width 10 px or 10 ppt
 
-	bindsym Left resize shrink width 100 px or 5 ppt
-	bindsym Down resize grow height 100 px or 5 ppt
-	bindsym Up resize shrink height 100 px or 5 ppt
-	bindsym Right resize grow width 100 px or 5 ppt
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -161,32 +180,32 @@ bindsym $mod+r mode "resize"
 #
 bar {
 	status_command LC_ALL=C i3status
-	font pango:Droid Sans Mono 8
+	font pango:Droid Sans Mono 10
     	position top
     	colors {
-				background $color_bg
-				statusline $color_fg
-				# colorclass       border    background text
-				focused_workspace  $color_fg $color_fg  $color_bg
-				active_workspace   $color_bg $color_bg  $color_fg
-				inactive_workspace $color_bg $color_bg  $color_fg
-				urgent_workspace   #ff0000   #ff0000    #000000
+				background #000000
+				statusline $yfocus
+				# colorclass       border  background text
+				focused_workspace  $yfocus $yfocus    #000000
+				active_workspace   #000000 #eeeeee    #000000
+				inactive_workspace #000000 #000000    #eeeeee
+				urgent_workspace   #ff0000 #ff0000    #000000
     	}
 }
 
 # Autostart
 #
-$exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo 0
-$exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 50%
-$exec pactl set-source-mute alsa_input.pci-0000_00_1f.3.analog-stereo 0
-$exec pactl set-source-volume alsa_input.pci-0000_00_1f.3.analog-stereo 50%
-$exec pactl set-source-mute alsa_output.pci-0000_00_1f.3.analog-stereo.monitor 1
-$exec pactl set-source-volume alsa_output.pci-0000_00_1f.3.analog-stereo.monitor 50%
-$exec urxvtd -q -f -o
-$exec nm-applet
-$exec compton --no-fading-openclose --active-opacity=1.0 --inactive-opacity=0.8 --no-dnd-shadow --shadow-ignore-shaped --vsync --backend=glx
-$exec nightshift -l 13.40:52.52
-$exec_always ~/.fehbg
+#$exec --no-startup-id compton
+$exec --no-startup-id urxvtd -q -f -o
+$exec --no-startup-id nm-applet
+$exec_always --no-startup-id ~/.fehbg
+
+# mute sound
+$exec --no-startup-id pactl set-sink-mute 0 0
+$exec --no-startup-id pactl set-sink-volume 0 0%
+$exec --no-startup-id pactl set-source-mute 0 1
+$exec --no-startup-id pactl set-source-volume 0 100%
+$exec --no-startup-id speed 2.5
 
 
 

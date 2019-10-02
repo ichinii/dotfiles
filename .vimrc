@@ -13,6 +13,7 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'
   Plugin 'tomtom/tcomment_vim'
   Plugin 'easymotion/vim-easymotion'
+  Plugin 'tikhomirov/vim-glsl'
 call vundle#end()
 filetype plugin indent on
 

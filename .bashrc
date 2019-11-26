@@ -7,12 +7,13 @@
 
 PS1='[\u@\h \W]\$ '
 
-alias f='vimf'
+alias f='fzf'
 alias v='vim'
 alias vi='vim'
 alias ls='ls --color=auto'
 alias la='ls --color=auto -alh'
 alias t="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
+alias c="clear"
 alias grep='grep --color --line-number'
 alias cal='cal -m'
 alias make='make -j $(nproc)'

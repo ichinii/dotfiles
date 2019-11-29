@@ -13,6 +13,8 @@ files = [
     '.vim/ycm_extra_conf.py',
     '.try/cpp',
     '.try/cpp_src',
+    '.try/glsl',
+    '.try/glsl_src',
     '.bin/try',
     '.bin/brightness',
     '.bin/cmake_source_dir'

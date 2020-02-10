@@ -17,7 +17,8 @@ vf() { grep -l $@ | fzf | xargs -o vim; }
 alias ls='ls --color=auto'
 alias la='ls --color=auto -alh'
 alias t="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"
-alias grep='grep --color --line-number'
+alias c="clear"
+alias grep='grep --color --line-number --exclude-dir=".git/"'
 alias cal='cal -m'
 alias make='make -j $(nproc)'
 cmake() { /bin/cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=true $@ && cp compile_commands.json "$(cmake_source_dir)"; }

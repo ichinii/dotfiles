@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   Plugin 'vim-scripts/L9'
-  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'ycm-core/YouCompleteMe'
   Plugin 'rdnetto/YCM-Generator'
   "Plugin 'vim-syntastic/syntastic'
   Plugin 'peterhoeg/vim-qml'
@@ -13,6 +13,7 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'
   Plugin 'tomtom/tcomment_vim'
   Plugin 'easymotion/vim-easymotion'
+  Plugin 'tikhomirov/vim-glsl'
 call vundle#end()
 filetype plugin indent on
 
@@ -57,7 +58,7 @@ set hlsearch incsearch smartcase ignorecase
 set wildmenu
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:$
 set wrap linebreak
-set colorcolumn=80
+set colorcolumn=100
 hi Search ctermbg=darkblue ctermfg=lightblue
 hi ColorColumn ctermbg=darkblue
 
@@ -69,6 +70,7 @@ nnoremap <F5> :YcmDiags<CR>
 nnoremap <F6> :YcmCompleter FixIt<Cr>
 nnoremap <F7> :YcmCompleter GetType<CR>
 nnoremap <F8> :YcmCompleter GoTo<CR>
+nnoremap <F9> :YcmDiags<CR>
 nnoremap <C-J> :jumps<CR>
 command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --system-libclang
 nnoremap f :FZF<CR>

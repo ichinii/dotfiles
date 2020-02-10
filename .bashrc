@@ -13,6 +13,7 @@ alias ff='export F=$(fzf)'
 alias ef='echo "$F"'
 alias v='vim'
 alias vi='vim'
+vf() { grep -l $@ | fzf | xargs -o vim; }
 alias ls='ls --color=auto'
 alias la='ls --color=auto -alh'
 alias t="i3-msg exec \"urxvtc -cd \$(pwd)\" 1> /dev/null"

@@ -13,6 +13,10 @@ files = [
     '.vim/ycm_extra_conf.py',
     '.try/cpp',
     '.try/cpp_src',
+    '.try/qt',
+    '.try/qt_src',
+    '.try/qml',
+    '.try/qml_src',
     '.bin/try',
     '.bin/cmake_source_dir'
 ]

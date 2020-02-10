@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cp -R "$1"/qml_src/* "$2"
+
+. useqt_5.11_dev
+ycm_gen_config . > /dev/null
+ycm_add_includes .ycm_extra_conf.py $HOME/builds/qt5.11_dev > /dev/null
+qmake try.pro > /dev/null
+vim +10 main.qml

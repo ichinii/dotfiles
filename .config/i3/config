@@ -64,7 +64,7 @@ set $monitor1 DVI-D-1
 	bindsym $mod+Return $exec $term
 	bindsym $mod+shift+q kill
 	bindsym $mod+m $exec i3lock -t -i ~/.wallpaper/cat_mushroom.png
-	bindsym $mod+p $exec scrot -u '%Y-%m-%d__%T__$wx$h.png' -e 'mv $f /home/sven/media/screenshots'
+	bindsym $mod+p $exec scrot -u '%Y-%m-%d_%H-%M-%S_$wx$h.png' -e 'mv $f /home/sven/media/screenshots'
 	bindsym $mod+d $exec $menu
 	floating_modifier $mod
 	bindsym $mod+Shift+c restart
@@ -207,7 +207,7 @@ $exec pactl set-source-volume alsa_input.pci-0000_00_1f.3.analog-stereo 50%
 $exec pactl set-source-mute alsa_output.pci-0000_00_1f.3.analog-stereo.monitor 1
 $exec pactl set-source-volume alsa_output.pci-0000_00_1f.3.analog-stereo.monitor 50%
 $exec urxvtd -q -f -o
-$exec compton --no-fading-openclose --active-opacity=1.0 --inactive-opacity=0.65 --no-dnd-shadow --shadow-ignore-shaped --vsync opengl --backend glx
+$exec compton --no-fading-openclose --active-opacity=1.0 --inactive-opacity=0.65 --no-dnd-shadow --shadow-ignore-shaped --vsync --backend=glx
 $exec_always ~/.fehbg
 
 

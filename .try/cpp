@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cp -R "$1"/cpp_src/* "$2"
+t
 vim +9 main.cpp

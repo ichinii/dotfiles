@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cp -R "$1"/glsl_src/* "$2"
+t
+vim +20 res/compute.glsl

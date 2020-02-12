@@ -15,6 +15,8 @@ files = [
     '.try/cpp_src',
     '.try/glsl',
     '.try/glsl_src',
+    '.try/model',
+    '.try/model_src',
     '.bin/try',
     '.bin/brightness',
     '.bin/cmake_source_dir'

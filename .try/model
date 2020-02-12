@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cp -R "$1"/model_src/* "$2"
+t
+vim +123 res/compute.glsl

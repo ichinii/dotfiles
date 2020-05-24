@@ -20,6 +20,7 @@ files = [
     '.bin/try',
     '.bin/brightness',
     '.bin/cmake_source_dir'
+    '.bin/sz'
 ]
 
 dry = False

@@ -1,12 +1,4 @@
-#include <algorithm>
-#include <chrono>
-#include <cstdint>
-#include <functional>
-#include <iostream>
-#include <memory>
-#include <string>
-#include <type_traits>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 using namespace std::string_literals;
 using namespace std::chrono_literals;

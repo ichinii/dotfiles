@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cp -R "$1"/cpp_src/* "$2"
-vim +19 main.cpp
+vim +11 main.cpp

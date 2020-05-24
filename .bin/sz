@@ -1,0 +1,7 @@
+#!/bin/bash
+
+F="$1"
+if [ -z "$F" ]; then
+	F=11
+fi
+printf '\33]50;%s\007' "xft:droid sans mono:pixelsize=$F"

@@ -14,6 +14,7 @@ call vundle#begin()
   Plugin 'easymotion/vim-easymotion'
   Plugin 'tikhomirov/vim-glsl'
 	" Plugin 'zxqfl/tabnine-vim'
+	Plugin 'zivyangll/git-blame.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -48,6 +49,9 @@ let g:lightline = {
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
+
+" git-blame
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 " options
 syntax on

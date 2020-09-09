@@ -49,6 +49,10 @@ if [ -d "$HOME/.lib" ]; then
 	export LD_LIBRARY_PATH=$HOME/.lib:$LD_LIBRARY_PATH
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+	export PATH=$PATH:$HOME/.cargo/bin
+fi
+
 # FZF
 export FZF_DEFAULT_OPTS='-m'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'

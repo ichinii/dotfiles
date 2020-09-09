@@ -73,12 +73,13 @@ nnoremap <F7> :YcmCompleter GetType<CR>
 nnoremap <F8> :YcmCompleter GoTo<CR>
 nnoremap <F9> :YcmDiags<CR>
 nnoremap <C-J> :jumps<CR>
-command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --system-libclang
+command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --rust-completer --clang-completer --system-libclang
 nnoremap f :FZF<CR>
 
 " tabs or spaces
 set                              tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab smarttab autoindent
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4   expandtab
+
 function! SetIndentStyle()
   let tabs = len(filter(getline('1', '$'), 'v:val =~ "^\t"'))
   let spaces = len(filter(getline('1', '$'), 'v:val =~ "^ "'))

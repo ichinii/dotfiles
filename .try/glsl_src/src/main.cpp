@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/rotate_vector.hpp>
 #include <chrono>
+#include <thread>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "shader.hpp"
@@ -40,7 +41,7 @@ int main()
 		if (!mods && key == GLFW_KEY_Q) glfwSetWindowShouldClose(window, true);
 	});
 	glfwMakeContextCurrent(window);
-	// glfwSwapInterval(0);
+	glfwSwapInterval(0);
 
 	if (glewInit() != GLEW_OK) return 0;
 	glClearColor(.2, .1, 0, 1);
@@ -145,6 +146,8 @@ int main()
 			std::cout << fps << " fps" << std::endl;
 			fps = 0;
 		}
+
+		std::this_thread::sleep_for(50ms);
 	}
 
 	glfwTerminate();

@@ -79,7 +79,7 @@ nnoremap <F6> :YcmCompleter FixIt<Cr>
 nnoremap <F7> :YcmCompleter GetType<CR>
 nnoremap <F8> :YcmCompleter GoTo<CR>
 nnoremap <C-J> :jumps<CR>
-command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --system-libclang
+command YCMcompile !cd ~/.vim/bundle/YouCompleteMe && ./install.py --rust-completer --clang-completer --system-libclang
 nnoremap f :FZF<CR>
 
 "set exrc

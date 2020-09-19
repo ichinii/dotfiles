@@ -23,7 +23,6 @@ alias iceon='source icepath on'
 alias iceoff='source icepath off'
 alias icetoggle='source icepath toggle'
 alias icestatus='icepath status'
-alias make='make -j $(nproc)'
 alias try='. try'
 alias ableton='wine "/home/ich/.wine/drive_c/ProgramData/Ableton/Live 10 Trial/Program/Ableton Live 10 Trial.exe"'
 

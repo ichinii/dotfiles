@@ -59,7 +59,8 @@ set number relativenumber
 set hlsearch incsearch ignorecase
 "set showmatch
 set wildmenu
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:$
+set listchars=tab:\|\ ,trail:$
+set list
 set wrap linebreak
 set colorcolumn=80
 hi Search ctermbg=darkblue ctermfg=lightblue

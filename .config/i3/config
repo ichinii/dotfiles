@@ -161,15 +161,15 @@ workspace 10' output $monitor1
 	bindsym $mod+a focus parent
 
 mode "resize" {
-	bindsym $left resize shrink width 64 px or 4 ppt
-	bindsym $down resize grow height 64 px or 4 ppt
-	bindsym $up resize shrink height 64 px or 4 ppt
-	bindsym $right resize grow width 64 px or 4 ppt
+	bindsym $left resize shrink width 32 px or 2 ppt
+	bindsym $down resize grow height 32 px or 2 ppt
+	bindsym $up resize shrink height 32 px or 2 ppt
+	bindsym $right resize grow width 32 px or 2 ppt
 
-	bindsym Left resize shrink width 64 px or 4 ppt
-	bindsym Down resize grow height 64 px or 4 ppt
-	bindsym Up resize shrink height 64 px or 4 ppt
-	bindsym Right resize grow width 64 px or 4 ppt
+	bindsym Left resize shrink width 32 px or 2 ppt
+	bindsym Down resize grow height 32 px or 2 ppt
+	bindsym Up resize shrink height 32 px or 2 ppt
+	bindsym Right resize grow width 32 px or 2 ppt
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"

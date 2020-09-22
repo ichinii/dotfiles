@@ -13,6 +13,7 @@ general {
 
 order += "disk /"
 order += "disk /home"
+order += "disk /mnt"
 order += "load"
 order += "wireless _first_"
 #order += "ethernet _first_"
@@ -49,6 +50,10 @@ disk "/" {
 
 disk "/home" {
         format = "/home %avail"
+}
+
+disk "/mnt" {
+        format = "/mnt %avail"
 }
 
 volume master {

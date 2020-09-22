@@ -47,6 +47,10 @@ if [ -d "$HOME/.bin" ]; then
 	export PATH=$HOME/.bin:$PATH
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+	export PATH=$HOME/.cargo/bin:$PATH
+fi
+
 LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 export FZF_DEFAULT_OPTS='-m'

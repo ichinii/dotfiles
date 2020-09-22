@@ -36,8 +36,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " FZF
-"  \ '': 'tab split',
 let g:fzf_action = {
+  \ '': 'tab split',
   \ 'ctrl-t': 'e',
   \ 'ctrl-v': 'split',
   \ 'ctrl-b': 'vsplit' }

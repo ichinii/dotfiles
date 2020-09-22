@@ -30,7 +30,7 @@ set $down j
 set $up k
 set $right l
 set $term urxvtc -pe selection-to-clipboard
-set $browser firefox
+set $browser epiphany
 set $files ranger
 set $files_visual nautilus
 set $menu dmenu_run
@@ -212,6 +212,3 @@ $exec --no-startup-id speed 2.5
 # Window Specific stuff
 #
 for_window [class="Gitk"] floating enable
-for_window [class="opengl_training"] floating enable
-for_window [class="oscilloscope"] floating enable
-for_window [class="bee"] floating enable

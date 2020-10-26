@@ -79,6 +79,7 @@ nnoremap f :FZF<CR>
 
 " tabs or spaces
 set                              tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab smarttab autoindent
+autocmd Filetype rust   setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab smarttab autoindent
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4   expandtab
 
 function! SetIndentStyle()

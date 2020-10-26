@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp -R "$1"/rust_src/* "$2"
+vim +2 src/main.rs

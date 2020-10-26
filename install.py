@@ -17,6 +17,8 @@ files = [
     '.try/qt_src',
     '.try/qml',
     '.try/qml_src',
+    '.try/rust',
+    '.try/rust_src',
     '.bin/try',
     '.bin/cmake_source_dir'
 ]

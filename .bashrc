@@ -28,6 +28,13 @@ alias try='. try'
 alias linphone="/opt/linphone-desktop/bin/linphone"
 alias fadd='git add $(fzf)'
 alias fcheckout='git checkout -- $(fzf)'
+alias ct="cargo check"
+alias cb="cargo b"
+alias cr="cargo r"
+alias cbr="cargo b --release"
+alias crr="cargo r --release"
+alias cf="cargo flamegraph && firefox --new-window flamegraph.svg"
+
 
 export TERM='xterm-256color'
 export VISUAL='vim'

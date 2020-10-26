@@ -4,15 +4,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   Plugin 'vim-scripts/L9'
-  Plugin 'ycm-core/YouCompleteMe'
-  Plugin 'rdnetto/YCM-Generator'
-  "Plugin 'vim-syntastic/syntastic'
+  " Plugin 'ycm-core/YouCompleteMe'
+  " Plugin 'rdnetto/YCM-Generator'
+  " Plugin 'vim-syntastic/syntastic'
   Plugin 'peterhoeg/vim-qml'
   Plugin 'junegunn/fzf'
   Plugin 'junegunn/fzf.vim'
   Plugin 'itchyny/lightline.vim'
   Plugin 'tomtom/tcomment_vim'
-  Plugin 'easymotion/vim-easymotion'
+  " Plugin 'easymotion/vim-easymotion'
   Plugin 'tikhomirov/vim-glsl'
 call vundle#end()
 filetype plugin indent on
@@ -25,13 +25,13 @@ let g:max_diagnostics_to_display = 1024
 
 " Syntastic
 " needs .syntastic_cpp_config with flags inside
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " FZF
 let g:fzf_action = {
@@ -59,6 +59,7 @@ set wildmenu
 set list
 set listchars=tab:\|\ ,trail:$
 set wrap linebreak
+set belloff=all
 set colorcolumn=100
 hi Search ctermbg=darkblue ctermfg=lightblue
 hi ColorColumn ctermbg=darkblue

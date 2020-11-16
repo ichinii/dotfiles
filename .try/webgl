@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cp -R "$1"/webgl_src/* "$2"
+firefox --new-window index.html
+vim +17 index.js

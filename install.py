@@ -17,6 +17,8 @@ files = [
     '.try/glsl_src',
     '.try/model',
     '.try/model_src',
+    '.try/webgl',
+    '.try/webgl_src',
     '.bin/try',
     '.bin/brightness',
     '.bin/cmake_source_dir',

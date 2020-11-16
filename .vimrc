@@ -4,8 +4,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   Plugin 'vim-scripts/L9'
-  Plugin 'ycm-core/YouCompleteMe'
-  Plugin 'rdnetto/YCM-Generator'
+  " Plugin 'ycm-core/YouCompleteMe'
+  " Plugin 'rdnetto/YCM-Generator'
   "Plugin 'vim-syntastic/syntastic'
   Plugin 'peterhoeg/vim-qml'
   Plugin 'tikhomirov/vim-glsl'
@@ -15,7 +15,6 @@ call vundle#begin()
   Plugin 'tomtom/tcomment_vim'
   Plugin 'easymotion/vim-easymotion'
   Plugin 'calviken/vim-gdscript3'
-	Plugin 'lervag/vimtex'
 call vundle#end()
 filetype plugin indent on
 
@@ -41,6 +40,10 @@ let g:fzf_action = {
   \ 'ctrl-t': 'e',
   \ 'ctrl-v': 'split',
   \ 'ctrl-b': 'vsplit' }
+" autocmd Filetype rust let g:fzf_action = {
+"   \ 'ctrl-t': 'e',
+"   \ 'ctrl-v': 'split',
+"   \ 'ctrl-b': 'vsplit' }
 
 " lightline
 set laststatus=2

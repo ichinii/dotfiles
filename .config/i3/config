@@ -57,7 +57,7 @@ set $monitor2 HDMI-2
 # general
 	bindsym $mod+Return $exec $term
 	bindsym $mod+shift+q kill
-	bindsym $mod+m $exec i3lock -t -i ~/media/pictures/wallpaper/spider.png
+	bindsym $mod+m $exec i3lock -t -i "$HOME/media/images/the-midnight-gospel-2.png"
 	bindsym $mod+p $exec scrot -u '%Y-%m-%d__%H-%M-%S__$wx$h.png' -e 'mv $f ~/media/screenshots'
 	bindsym $mod+d $exec $menu
 	floating_modifier $mod

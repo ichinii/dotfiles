@@ -27,10 +27,15 @@ alias try='. try'
 alias ableton='wine "/home/ich/.wine/drive_c/ProgramData/Ableton/Live 10 Trial/Program/Ableton Live 10 Trial.exe"'
 alias ct="cargo check"
 alias cb="cargo b"
-alias cr="cargo r"
+alias cr="RUST_BACKTRACE=1 cargo r"
 alias cbr="cargo b --release"
 alias crr="cargo r --release"
-alias cf="cargo flamegraph && firefox --new-window flamegraph.svg"
+alias cf="cargo flamegraph --bin elements && epiphany --new-window flamegraph.svg"
+alias jackk="jack_control stop"
+alias bc="bc -li"
+alias pioc="pio run"
+alias pior="pio run --target upload"
+alias piom="pio device monitor -b 115200"
 
 export TERM='xterm-256color'
 export VISUAL='vim'

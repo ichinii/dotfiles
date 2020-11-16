@@ -30,8 +30,8 @@ set $down j
 set $up k
 set $right l
 set $term urxvtc -pe selection-to-clipboard
-set $browser epiphany
-set $files ranger
+set $epiphany epiphany --new-window
+set $firefox firefox --new-window
 set $files_visual nautilus
 set $menu dmenu_run
 set $monitor0 eDP-1
@@ -41,9 +41,8 @@ set $monitor2 HDMI-2
 ### Key bindings
 #
   # Applications
-  bindsym $mod+o $exec $browser
-  bindsym $mod+i $exec $term -e $files
-  bindsym $mod+u $exec $files_visual
+  bindsym $mod+i $exec $epiphany
+  bindsym $mod+o $exec $firefox
   bindsym $mod+Shift+Return $exec $term -e vim
 
   # Pulse Audio controls

@@ -48,8 +48,8 @@ if [ -d "/usr/lib/icecream/bin" ]; then
 	export PATH=$PATH:/usr/lib/icecream/bin
 fi
 
-if [ -d "$HOME/.bin" ]; then
-	export PATH=$HOME/.bin:$PATH
+if [ -d "$HOME/bin" ]; then
+	export PATH=$HOME/bin:$PATH
 fi
 
 if [ -d "$HOME/.cargo/bin" ]; then

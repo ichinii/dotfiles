@@ -19,10 +19,9 @@ files = [
     '.try/model_src',
     '.try/webgl',
     '.try/webgl_src',
-    '.bin/try',
-    '.bin/brightness',
-    '.bin/cmake_source_dir',
-    '.bin/sz',
+    'bin/try',
+    'bin/cmake_source_dir',
+    'bin/sz',
 ]
 
 dry = False

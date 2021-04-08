@@ -64,3 +64,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export USE_TARGETS_FOLDER=$HOME/.use
 export USE_CONFIG_FILE=$HOME/.use/config.json
+source "$HOME/.cargo/env"

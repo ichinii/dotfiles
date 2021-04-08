@@ -4,9 +4,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   Plugin 'vim-scripts/L9'
-  " Plugin 'ycm-core/YouCompleteMe'
+  Plugin 'ycm-core/YouCompleteMe'
   " Plugin 'rdnetto/YCM-Generator'
-  "Plugin 'vim-syntastic/syntastic'
+  " Plugin 'vim-syntastic/syntastic'
   Plugin 'peterhoeg/vim-qml'
   Plugin 'tikhomirov/vim-glsl'
   Plugin 'junegunn/fzf'

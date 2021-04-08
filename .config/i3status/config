@@ -16,10 +16,10 @@ order += "disk /home"
 order += "disk /mnt"
 order += "disk /home/ich/mnt"
 order += "load"
-order += "wireless _first_"
-#order += "ethernet _first_"
+# order += "wireless _first_"
+order += "ethernet _first_"
 order += "volume master"
-order += "battery all"
+#order += "battery all"
 order += "tztime local"
 
 wireless _first_ {
